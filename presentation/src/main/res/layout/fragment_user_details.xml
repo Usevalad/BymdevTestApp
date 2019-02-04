@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.vsevolod.test_app.ui.screens.UserDetailViewModel" />
+
+        <variable
+            name="viewModel"
+            type="UserDetailViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout style="@style/Fill">
+
+
+        <ImageView
+            android:id="@+id/imageView3"
+            style="@style/WeightedVertically"
+            app:url="@{viewModel.user.avatarUrl}"
+            app:layout_constraintBottom_toBottomOf="@+id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@android:color/background_dark" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.6" />
+
+        <TextView
+            android:id="@+id/userName"
+            style="@style/Wrapped"
+            android:layout_marginTop="@dimen/margin_small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline"
+            tools:text="user name" />
+
+        <TextView
+            android:id="@+id/birth"
+            style="@style/Wrapped"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@{String.format(@string/birth, viewModel.user.birthDate)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userName"
+            tools:text="Birth: 32/23/2334" />
+
+        <TextView
+            android:id="@+id/gender"
+            style="@style/Wrapped"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@{String.format(@string/gender, viewModel.user.gender)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/birth"
+            tools:text="Gender: male" />
+
+        <TextView
+            android:id="@+id/location"
+            style="@style/Wrapped"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@{String.format(@string/location, viewModel.user.location)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gender"
+            tools:text="Location: Kiev, Ukraine" />
+
+        <TextView
+            android:id="@+id/email"
+            style="@style/Wrapped"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@{String.format(@string/email, viewModel.user.email)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/location"
+            tools:text="Email: asda@asd.com" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

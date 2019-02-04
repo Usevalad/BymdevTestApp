@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.vsevolod.test_app.ui.bases.input.FieldViewModel" />
+
+        <import type="com.vsevolod.test_app.ui.bases.input.FieldViewModel.Optionality" />
+
+        <variable
+            name="viewModel"
+            type="FieldViewModel" />
+    </data>
+
+    <android.support.design.widget.TextInputLayout
+        style="@style/Wide.Indented"
+        app:counterEnabled="@{viewModel.counterEnabled}"
+        app:counterMaxLength="@{viewModel.maxLength}"
+        app:error="@{viewModel.error}"
+        app:errorEnabled="true"
+        app:hint="@{viewModel.hint}"
+        app:inputType="@{viewModel.inputType}"
+        app:optional="@{viewModel.optionality == Optionality.Optional.INSTANCE}"
+        app:passwordToggleEnabled="@{true}">
+
+        <!--suppress AndroidUnknownAttribute -->
+        <android.support.design.widget.TextInputEditText
+            style="@style/Wide"
+            tools:text="@tools:sample/lorem"
+            android:clickable="@{viewModel.clickable}"
+            android:focusable="@{viewModel.focusable}"
+            android:onClick="@{() -> viewModel.onClick.invoke()}"
+            android:enabled="@{viewModel.enabled}"
+            android:gravity="@{viewModel.gravity}"
+            android:onFocusChange="@{(v, hasFocus) -> hasFocus ? viewModel.onFocused() : viewModel.onFocusLost()}"
+            android:onTextChanged="@{() -> viewModel.onTextChanged()}"
+            android:text="@={viewModel.input}"
+            app:filters="@{viewModel.filters}"
+            app:maxLines="@{viewModel.maxLines}"
+            app:minLines="@{viewModel.minLines}"
+            app:moveCursorToEnd="@={viewModel.moveCursorToEnd}"
+            app:onEditorActionListener="@{(v, actionId, event) -> viewModel.onEditorAction(actionId)}"
+            app:requestFocus="@={viewModel.requestFocus}" />
+    </android.support.design.widget.TextInputLayout>
+</layout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.vsevolod.test_app.ui.bases.ListViewModel" />
+
+        <variable
+            name="viewModel"
+            type="ListViewModel" />
+    </data>
+
+    <FrameLayout style="@style/Fill">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            style="@style/Fill"
+            app:adapter="@{viewModel.adapter}"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_user" />
+
+        <TextView
+            style="@style/Wrapped"
+            android:layout_gravity="center"
+            android:textAppearance="@android:style/TextAppearance"
+            android:visibility="@{viewModel.noItemsMessage != 0}"
+            app:optionalText="@{viewModel.noItemsMessage}"
+            tools:text="@string/empty_list" />
+    </FrameLayout>
+</layout>

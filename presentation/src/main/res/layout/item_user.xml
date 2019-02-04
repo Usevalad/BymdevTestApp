@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.vsevolod.test_app.ui.screens.UserListViewModel.UserAdapter.UserItemViewHolder" />
+
+        <variable
+            name="viewModel"
+            type="UserItemViewHolder" />
+    </data>
+
+    <android.support.v7.widget.CardView
+        style="@style/Wide"
+        android:onClick="@{() -> viewModel.showDetails()}"
+        app:cardUseCompatPadding="true">
+
+        <android.support.constraint.ConstraintLayout
+            style="@style/Wide"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_small"
+            android:visibility="visible"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:url="@{viewModel.item.avatarUrl}"
+                tools:background="@color/black" />
+
+            <TextView
+                android:id="@+id/userName"
+                style="@style/Wrapped"
+                android:layout_marginStart="@dimen/margin_small"
+                android:text="@{viewModel.item.firstName}"
+                app:layout_constraintBottom_toTopOf="@+id/date"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toTopOf="@+id/imageView"
+                tools:text="Name" />
+
+            <TextView
+                android:id="@+id/date"
+                style="@style/Wrapped"
+                android:layout_marginStart="@dimen/margin_small"
+                android:text="@{viewModel.item.birthDate}"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toBottomOf="@+id/userName"
+                tools:text="11/22/3133" />
+
+            <TextView
+                android:id="@+id/age"
+                style="@style/Wrapped"
+                android:text="@{String.format(@string/age, viewModel.item.age)}"
+                app:layout_constraintBaseline_toBaselineOf="@+id/date"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Age: 15" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+</layout>

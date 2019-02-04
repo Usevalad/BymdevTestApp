@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="margin_extra_large">32dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
+    <dimen name="margin_middle">16dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_tiny">4dp</dimen>
+
+    <dimen name="screen_horizontal_margin">16dp</dimen>
+
+    <dimen name="item_profile_image_size">56dp</dimen>
+
+    <dimen name="width_button">240dp</dimen>
+
+</resources>

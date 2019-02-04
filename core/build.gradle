@@ -1,0 +1,12 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$versions.kotlin"
+
+    api "io.reactivex.rxjava2:rxjava:$versions.rxJava"
+    api "javax.inject:javax.inject:$versions.inject"
+
+    api "joda-time:joda-time:2.10"
+}

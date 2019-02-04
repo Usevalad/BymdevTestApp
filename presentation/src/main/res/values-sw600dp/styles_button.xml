@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Default.Button.Colored" parent="Wrapped.Button.Colored">
+        <item name="android:layout_width">@dimen/width_button</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+
+    <style name="Default.Button.Borderless" parent="Wrapped.Button.Borderless">
+        <item name="android:layout_width">@dimen/width_button</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+
+    <style name="Default.Button.Borderless.Colored" parent="Wrapped.Button.Borderless.Colored">
+        <item name="android:layout_width">@dimen/width_button</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+
+</resources>

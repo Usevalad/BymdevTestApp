@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">BymdevTestApp</string>
+
+    <string name="loading">Загрузка…</string>
+    <string name="canceled">Отменено</string>
+    <string name="sign_in">Войти</string>
+    <string name="sign_out">Выход</string>
+    <string name="auth">Авторизация</string>
+    <string name="loading_completed">Загрузка завершена</string>
+    <string name="success">Успех!</string>
+
+    <string name="empty_list">Список пуст…</string>
+
+    <!--Hints-->
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Пароль</string>
+    <string name="hint_new_password">Новый пароль</string>
+    <string name="hint_old_password">Старый пароль</string>
+    <string name="hint_confirm_password">Подтвердите пароль</string>
+
+    <!--Errors-->
+    <string name="error_field_required">Обязательное поле</string>
+    <string name="error_wrong_email">Неверный email</string>
+    <string name="error_wrong_password">Пароль должен содержать не менее восьми символов</string>
+    <string name="error_password_confirmation">Пароли не совпадают</string>
+    <string name="error_unknown">Неизвестная ошибка</string>
+    <string name="error_connection">Ошибка соединения. Проверьте наличие интернет подключения и повторите попытку</string>
+    <string name="error_loading">Ошибка загрузки</string>
+
+    <!--Content Descriptions-->
+    <string name="profile_image">Изображение профиля</string>
+
+    <!--User fields-->
+    <string name="age"><b>Age</b>: %s</string>
+    <string name="gender"><b>Gender</b>: %s</string>
+    <string name="birth"><b>Birth</b>: %s</string>
+    <string name="location"><b>Location</b>: %s</string>
+    <string name="email"><b>Email</b>: %s</string>
+
+</resources>

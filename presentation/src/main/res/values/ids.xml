@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="fragment_container" type="id" />
+    <item name="selected_item_id_actual" type="id" />
+    <item name="on_page_change_listener" type="id" />
+</resources>
